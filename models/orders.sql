@@ -61,7 +61,7 @@ topOrders AS (
   
   FROM final AS in0
   
-  WHERE amount > 1000
+  WHERE amount > 5000
 
 ),
 
