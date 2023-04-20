@@ -53,36 +53,8 @@ final AS (
   LEFT JOIN order_payments
      ON orders.order_id = order_payments.order_id
 
-),
-
-topOrders AS (
-
-  SELECT * 
-  
-  FROM final AS in0
-  
-  WHERE amount > 5000
-
-),
-
-Reformat AS (
-
-  SELECT 
-    order_id AS order_id,
-    customer_id AS customer_id,
-    order_date AS order_date,
-    status AS status,
-    credit_card_amount AS credit_card_amount,
-    coupon_amount AS coupon_amount,
-    bank_transfer_amount AS bank_transfer_amount,
-    gift_card_amount AS gift_card_amount,
-    amount AS amount,
-    concat(order_id, status) AS ID_status
-  
-  FROM topOrders AS in0
-
 )
 
 SELECT *
 
-FROM Reformat
+FROM final
