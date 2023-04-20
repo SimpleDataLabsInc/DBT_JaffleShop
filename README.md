@@ -81,3 +81,7 @@ For more information on dbt:
 *** Release notes for version: 0.0.8 ***
 
 gets the top 5000 orders
+
+*** Release notes for version: 1.0.8 ***
+
+updates filter logic
