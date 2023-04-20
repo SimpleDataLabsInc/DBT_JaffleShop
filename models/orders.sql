@@ -53,8 +53,16 @@ final AS (
   LEFT JOIN order_payments
      ON orders.order_id = order_payments.order_id
 
+),
+
+Reformat_1 AS (
+
+  SELECT * 
+  
+  FROM final AS in0
+
 )
 
 SELECT *
 
-FROM final
+FROM Reformat_1

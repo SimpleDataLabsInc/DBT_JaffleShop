@@ -181,6 +181,131 @@
         "isCustomOutputSchema" : false
       }
     },
+    "W8-1GzZViA5tUrDJAz_Do$$JYf1zdDgXnF5aljHcxf0o" : {
+      "id" : "W8-1GzZViA5tUrDJAz_Do$$JYf1zdDgXnF5aljHcxf0o",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1",
+        "slug" : "Reformat_1",
+        "x" : 720,
+        "y" : 180,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "XTMAJuxFxFGrRTdhI38bL$$gT3PVkj7qvLEt66ukDWhx",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "order_id",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "customer_id",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "order_date",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "status",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "credit_card_amount",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "coupon_amount",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "bank_transfer_amount",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "gift_card_amount",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "amount",
+              "dataType" : {
+                "type" : "Double"
+              }
+            } ]
+          },
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "7U2eQNDDtIZ9wsJaN8YQA$$nheCTSJAv6_ZXMYQz8qRc",
+          "schema" : {
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "order_id",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "customer_id",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "order_date",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "status",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "credit_card_amount",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "coupon_amount",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "bank_transfer_amount",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "gift_card_amount",
+              "dataType" : {
+                "type" : "Double"
+              }
+            }, {
+              "name" : "amount",
+              "dataType" : {
+                "type" : "Double"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
     "orders##X7MmH96x" : {
       "id" : "orders##X7MmH96x",
       "component" : "Model",
@@ -422,7 +547,7 @@
         "customQueryDisabled" : true,
         "customQuery" : false,
         "incrementalEditorDisabled" : true,
-        "query" : "SELECT * \n\nFROM final\n",
+        "query" : "SELECT * \n\nFROM Reformat_1\n",
         "incrementalKey" : false,
         "incremental" : {
           "expression" : "true"
@@ -480,7 +605,7 @@
               }
             } ]
           },
-          "slug" : "final"
+          "slug" : "Reformat_1"
         } ],
         "outputs" : [ {
           "id" : "oFTCX5bO",
@@ -558,9 +683,15 @@
     "target" : "final##otVnM3oK",
     "targetPort" : "FeGXVHIh"
   }, {
-    "id" : "7saSJPuISGdQ4tamgChGd",
+    "id" : "R4_NHKWO9Wb8KacQ6jUHv",
     "source" : "final##otVnM3oK",
     "sourcePort" : "VBaFykIe",
+    "target" : "W8-1GzZViA5tUrDJAz_Do$$JYf1zdDgXnF5aljHcxf0o",
+    "targetPort" : "XTMAJuxFxFGrRTdhI38bL$$gT3PVkj7qvLEt66ukDWhx"
+  }, {
+    "id" : "VlR1-YbQsqDA8d3OnfaEz",
+    "source" : "W8-1GzZViA5tUrDJAz_Do$$JYf1zdDgXnF5aljHcxf0o",
+    "sourcePort" : "7U2eQNDDtIZ9wsJaN8YQA$$nheCTSJAv6_ZXMYQz8qRc",
     "target" : "orders##Oy27wv1t",
     "targetPort" : "aRAmkOVE"
   } ],
